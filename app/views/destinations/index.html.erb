@@ -1,0 +1,31 @@
+<h1>Προορισμοί</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Πόλη</th>
+      <th>Χιλιόμετρα</th>
+      <th>Πλασματικά χμ</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @destinations.each do |destination| %>
+      <tr>
+        <td><%= destination.city %></td>
+        <td><%= destination.km_real %></td>
+        <td><%= destination.km_plasma %></td>
+        <td>
+          <%= link_to 'Δρομολόγιο', destination, class: 'btn btn-primary btn-xs' %>
+          <%= link_to 'Επεξεργασία', edit_destination_path(destination), class: 'btn btn-primary btn-xs' %>
+          <%= link_to 'Διαγραφή', destination, class: 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Νέος Προορισμός', new_destination_path, class: 'btn btn-primary' %>

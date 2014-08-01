@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ktel</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="container">
+
+	  <!-- Static navbar -->
+	  <div class="navbar navbar-default" role="navigation">
+	    <div class="container-fluid">
+	      <div class="navbar-header">
+	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	          <span class="sr-only">Toggle navigation</span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	        </button>
+	        <%= link_to 'ΚΤΕΛ Χόνδρης', root_path, class: 'navbar-brand' %>
+	      </div>
+	      <div class="navbar-collapse collapse">
+	        <ul class="nav navbar-nav">
+	          <li class="dropdown">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Διαχείριση <span class="caret"></span></a>
+	            <ul class="dropdown-menu" role="menu">
+	              <li><%= link_to 'Προορισμοί', destinations_path %></li>
+	            </ul>
+	          </li>
+	        </ul>
+	        
+	      </div><!--/.nav-collapse -->
+	    </div><!--/.container-fluid -->
+    </div>
+<%= yield %>
+
+</body>
+</html>

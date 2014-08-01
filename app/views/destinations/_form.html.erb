@@ -1,0 +1,13 @@
+<%= simple_form_for(@destination) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :city %>
+    <%= f.input :km_real %>
+    <%= f.input :km_plasma %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

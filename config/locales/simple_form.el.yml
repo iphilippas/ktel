@@ -1,0 +1,7 @@
+el:
+  simple_form:
+    labels:
+      destinations:
+        city: 'Πόλη'
+        km_real: 'Χιλιόμετρα'
+        km_real: 'Πλασματικά χμ'

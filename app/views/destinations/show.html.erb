@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Πόλη:</strong>
+  <%= @destination.city %>
+</p>
+
+<p>
+  <strong>Χιλιόμετρα:</strong>
+  <%= @destination.km_real %>
+</p>
+
+<p>
+  <strong>Χιλιόμετρα πλασματικά:</strong>
+  <%= @destination.km_plasma %>
+</p>
+
+<%= link_to 'Επεξεργασία', edit_destination_path(@destination) %> 
+<%= link_to 'Προορισμοί', destinations_path %>
