@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Πόλη:</strong>
   <%= @destination.city %>
@@ -15,5 +13,5 @@
   <%= @destination.km_plasma %>
 </p>
 
-<%= link_to 'Επεξεργασία', edit_destination_path(@destination) %> 
-<%= link_to 'Προορισμοί', destinations_path %>
+<%= link_to 'Επεξεργασία', edit_destination_path(@destination), class: 'btn btn-primary margin-top-20' %> 
+<%= link_to 'Προορισμοί', destinations_path, class: 'btn btn-primary margin-top-20' %>
