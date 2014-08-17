@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Number:</strong>
+  <strong>Νούμερο:</strong>
   <%= @bus.number %>
 </p>
 
 <p>
-  <strong>Label:</strong>
+  <strong>Πινακίδα:</strong>
   <%= @bus.label %>
 </p>
 
-<%= link_to 'Edit', edit_bus_path(@bus) %> |
-<%= link_to 'Back', buses_path %>
+<%= link_to 'Επεξεργασία', edit_bus_path(@bus), class: 'btn btn-primary margin-top-20' %> |
+<%= link_to 'Λεωφορία', buses_path, class: 'btn btn-primary margin-top-20' %>

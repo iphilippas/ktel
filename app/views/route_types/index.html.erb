@@ -1,0 +1,27 @@
+<h1>Τύποι δρομολογίων</h1>
+
+<table class="table table-stripped">
+  <thead>
+    <tr>
+      <th>Τύπος</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @route_types.each do |route_type| %>
+      <tr>
+        <td><%= route_type.description %></td>
+        <td>
+          <%= link_to 'Τύπος δρομολόγιου', route_type, class: 'btn btn-primary btn-xs' %>
+          <%= link_to 'Επεξεργασία', edit_route_type_path(route_type), class: 'btn btn-primary btn-xs' %>
+          <%= link_to 'Διαγραφή', route_type, method: :delete, class: 'btn btn-danger btn-xs', data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Νέος τύπος δρομολογίου', new_route_type_path, class: 'btn btn-primary' %>

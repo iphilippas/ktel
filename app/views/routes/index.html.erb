@@ -1,0 +1,63 @@
+
+<h1>Δρομολόγια</h1>
+<div class="col-md-9">
+<table class="table table-stripped">
+  <thead>
+    <tr>
+      <%= content_tag :th, sort_link(@q, :code_name) %>
+      <%= content_tag :th, sort_link(@q, :destination_city) %>
+      <th>Route type</th>
+      <%= content_tag :th, sort_link(@q, :time) %>
+      <%= content_tag :th, sort_link(@q, :night) %>
+      <%= content_tag :th, sort_link(@q, :express) %>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @routes.each do |route| %>
+      <tr>
+        <td><%= route.code_name %></td>
+        <td><%= route.destination.city %></td>
+        <td><%= route.route_type.description %></td>
+        <td><%= route.time %></td>
+        <td><%= route.night %></td>
+        <td><%= route.human_express %>
+        <td>
+          <%= link_to ' Δρομολόγιο', route, class: 'btn btn-primary btn-xs' %>
+          <%= link_to 'Επεξεργασία', edit_route_path(route), class: 'btn btn-primary btn-xs' %>
+          <%= link_to 'Διαγραφή', route, class: 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= will_paginate @routes, renderer: BootstrapPagination::Rails %>
+<br>
+
+<%= link_to 'Νέο Δρομολόγιο', new_route_path, class: 'btn btn-primary' %>
+</div>
+<div class="col-md-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Εύρεση</h3>
+    </div>
+    <div class="panel-body">
+      <%= search_form_for @q do |f| %>
+        <div class="form-group">
+          <label for="code_name">Κωδικός</label>
+          <%= f.search_field :code_name_cont, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <label for="code_name">Προορισμός</label>
+          <%= f.select :destination_id_eq, options_from_collection_for_select(Destination.all, "id", "city"), { include_blank: true }, { class: 'form-control' } %>
+        </div>
+        
+        <%= f.submit class: 'btn btn-primary' %>
+        <%= link_to 'Εκκαθάριση', routes_path, class: 'btn btn-danger' %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -4,7 +4,8 @@ class BusesController < ApplicationController
   # GET /buses
   # GET /buses.json
   def index
-    @buses = Bus.all
+    @q = Bus.search(params[:q])
+    @buses = @q.result.includes(:destinations, :route_types).paginate(:page => params[:page])
   end
 
   # GET /buses/1

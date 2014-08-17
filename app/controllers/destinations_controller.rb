@@ -4,7 +4,8 @@ class DestinationsController < ApplicationController
   # GET /destinations
   # GET /destinations.json
   def index
-    @destinations = Destination.all
+    @q = Destination.search(params[:q])
+    @destinations = @q.result(distinct: true).paginate(:page => params[:page])
   end
 
   # GET /destinations/1

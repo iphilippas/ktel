@@ -1,11 +1,12 @@
+<div class="col-md-9">
 <h1>Προορισμοί</h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Πόλη</th>
-      <th>Χιλιόμετρα</th>
-      <th>Πλασματικά χμ</th>
+      <%= content_tag :th, sort_link(@q, :city) %>
+      <%= content_tag :th, sort_link(@q, :km_real) %>
+      <%= content_tag :th, sort_link(@q, :km_plasma) %>
       <th></th>
     </tr>
   </thead>
@@ -27,5 +28,26 @@
 </table>
 
 <br>
+<%= will_paginate @destinations, renderer: BootstrapPagination::Rails %>
+<br>
 
 <%= link_to 'Νέος Προορισμός', new_destination_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="col-md-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Εύρεση Πόλης</h3>
+    </div>
+    <div class="panel-body">
+      <%= search_form_for @q do |f| %>
+        <div class="form-group">
+          <%= f.search_field :city_cont, class: 'form-control' %>
+        </div>
+        
+        <%= f.submit class: 'btn btn-primary' %>
+        <%= link_to 'Εκκαθάριση', destinations_path, class: 'btn btn-danger' %>
+      <% end %>
+    </div>
+  </div>
+</div>

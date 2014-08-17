@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Κωδικός:</strong>
+  <%= @route.code_name %>
+</p>
+
+<p>
+  <strong>Προορισμός:</strong>
+  <%= @route.destination %>
+</p>
+
+<p>
+  <strong>Τύπος:</strong>
+  <%= @route.route_type %>
+</p>
+
+<p>
+  <strong>Ώρα:</strong>
+  <%= @route.time %>
+</p>
+
+<p>
+  <strong>Εχπρεσσ:</strong>
+  <%= @route.human_express %>
+</p>
+
+<%= link_to 'Επεξεργασία', edit_route_path(@route), class: 'btn btn-primary margin-top-20' %> |
+<%= link_to 'Δρομολόγια', routes_path, class: 'btn btn-primary margin-top-20' %>

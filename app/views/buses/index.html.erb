@@ -1,11 +1,11 @@
-<h1>Listing buses</h1>
+<h1>Λεωφορία</h1>
 
-<table>
+<table class="table table-stripped">
   <thead>
     <tr>
-      <th>Number</th>
-      <th>Label</th>
-      <th colspan="3"></th>
+      <%= content_tag :th, sort_link(@q, :number) %>
+      <th>Πινακίδα</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -14,14 +14,17 @@
       <tr>
         <td><%= bus.number %></td>
         <td><%= bus.label %></td>
-        <td><%= link_to 'Show', bus %></td>
-        <td><%= link_to 'Edit', edit_bus_path(bus) %></td>
-        <td><%= link_to 'Destroy', bus, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Λεωφορίο', bus, class: 'btn btn-primary btn-xs' %>
+          <%= link_to 'Επεξεργασία', edit_bus_path(bus), class: 'btn btn-primary btn-xs' %>
+          <%= link_to 'Διαγραφή', bus, class: 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Bus', new_bus_path %>
+<%= will_paginate @buses, renderer: BootstrapPagination::Rails %>
+<br>
+<%= link_to 'Νέο Λεωφορίο', new_bus_path, class: 'btn btn-primary' %>

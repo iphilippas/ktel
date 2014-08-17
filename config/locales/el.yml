@@ -1,15 +1,54 @@
 el:
+  will_paginate:
+    previous_label: "Προηγούμενο"
+    next_label: "Επόμενο"
+    page_gap: "&hellip;"
   simple_form:
     labels:
       destination:
         city: 'Πόλη'
         km_real: 'Χιλιόμετρα'
         km_plasma: 'Πλασματικά χμ'
+      bus:
+        number: 'Όνομα'
+        label: 'Πινακίδα'
+      route_type:
+        description: 'Τύπος'
+      route:
+        code_name: 'Κωδικός'
+        destination: 'Προορισμός'
+        route_type: 'Τύπος'
+        time: 'Ώρα'
+        night: 'Διανυκτέρευση'
   activerecord:
     models:
       destination:
         one: 'Προορισμός'
         other: 'Προορισμοί'
+      bus:
+        one: 'Λεωφορίο'
+        other: 'Λεωφορία'
+      route_type:
+        one: 'Τύπος δρομολογίου'
+        other: 'Τύποι δρομολογίων'
+      route:
+        one: 'Δρομολόγιο'
+        other: 'Δρομολόγια'
+    attributes:
+      bus:
+        number: 'Νούμερο'
+      destination:
+        city: 'Πόλη'
+        km_real: 'Χιλιόμετρα'
+        km_plasma: 'Πλασματικά Χιλιόμετρα'
+      route_type:
+        description: 'Τύπος'
+      route:
+        code_name: 'Κωδικός'
+        destination: 'Προορισμός'
+        route_type: 'Τύπος'
+        time: 'Ώρα'
+        night: 'Διανυκτέρευση'
   date:
     abbr_day_names:
     - Κυρ

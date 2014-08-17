@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Τύπος:</strong>
+  <%= @route_type.description %>
+</p>
+
+<%= link_to 'Επεξεργασία', edit_route_type_path(@route_type), class: 'btn btn-primary margin-top-20' %> 
+<%= link_to 'Τύποι Δρομολογίων', route_types_path, class: 'btn btn-primary margin-top-20' %>

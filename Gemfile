@@ -42,6 +42,10 @@ gem 'paperclip', '~> 4.1'
 gem 'clearance'
 gem 'simple_form', git: 'https://github.com/plataformatec/simple_form.git'
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
+gem 'will_paginate', '~> 3.0'
+gem 'ransack'
+gem 'will_paginate-bootstrap'
+gem 'validates_timeliness', '~> 3.0'
 
 group :development, :test do
   gem 'rspec-rails'

@@ -3,4 +3,7 @@ class StaticPagesController < ApplicationController
 
   def dashboard
   end
+
+  def assign_route
+  end
 end
